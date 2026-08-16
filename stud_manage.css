@@ -1,0 +1,189 @@
+/* General Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #00c6ff, #0072ff); /* Vibrant gradient background */
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar Styling */
+.navbar {
+    position: fixed; /* Keeps navbar at the top-right even when scrolling */
+    top: 10px;
+    right: 10px;
+    display: flex;
+    justify-content: flex-end;
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 15px;
+    margin: 0 10px;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 1.1em;
+    transition: all 0.3s ease;
+}
+
+.navbar a:hover {
+    background-color: #fff;
+    color: #0072ff;
+    transform: scale(1.05);
+}
+
+/* Main Container */
+.container {
+    margin-top: 80px; /* Space for the fixed navbar */
+    padding: 20px;
+    text-align: center;
+}
+
+/* Page Heading */
+h1 {
+    font-size: 2.5em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #ffffff;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Section for Year and Section Filter */
+#filter-section {
+    margin-bottom: 30px;
+}
+
+#filterForm {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#filterForm label {
+    font-size: 1.1em;
+    color: #fff;
+}
+
+#filterForm select {
+    padding: 8px;
+    font-size: 1em;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.btn-submit {
+    padding: 10px 20px;
+    background-color: #00c6ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: #0072ff;
+}
+
+/* Student Grades Table */
+#student-grades {
+    margin-top: 20px;
+}
+
+#grades-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+#grades-table th, #grades-table td {
+    padding: 15px;
+    text-align: center;
+    font-size: 1.1em;
+    color: #333;
+}
+
+#grades-table th {
+    background-color: #0072ff;
+    color: white;
+}
+
+#grades-table tbody tr:nth-child(odd) {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+#grades-table tbody tr:hover {
+    background-color: #00c6ff;
+    transform: scale(1.02);
+    color: #fff;
+}
+
+#grades-table input {
+    width: 80%;
+    padding: 5px;
+    font-size: 1em;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin: 5px 0;
+}
+
+#grades-table input:focus {
+    border-color: #0072ff;
+}
+
+/* Final Grade Display */
+#grades-table td span {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+/* Save Button */
+.save-btn {
+    padding: 10px 20px;
+    background-color: #00c6ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.save-btn:hover {
+    background-color: #0072ff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #filterForm {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #grades-table input {
+        width: 90%;
+    }
+
+    .btn-submit, .save-btn {
+        width: 100%;
+        margin-top: 10px;
+    }
+}

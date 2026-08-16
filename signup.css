@@ -1,0 +1,180 @@
+:root {
+    --black: #000;
+    --white: #fff;
+    --gray: #ccc;
+    --dark-gray: #333;
+    --light-gray: #f0f0f0;
+    --blue: #007bff; /* Accent color */
+    --light-blue: #66b3ff; /* Lighter accent color */
+}
+
+/* Ensure a clean, centered container */
+body, html {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: var(--light-gray);
+    font-family: 'Arial', sans-serif;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: row; 
+    width: 90%;
+    max-width: 850px;
+    height: auto;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    background: var(--white);
+}
+
+/* Left Panel Styling */
+.info-text {
+    background: var(--blue);
+    color: var(--white);
+    width: 50%;
+    padding: 30px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.info-text h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.info-text p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-top: 10px;
+}
+
+/* Right Form Panel Styling */
+.form-box {
+    width: 50%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Changed align-items to flex-start for form fields */
+    align-items: flex-start; 
+}
+
+.form-box h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: var(--black);
+    align-self: center; /* Center the heading */
+}
+
+/* --- Input and Label Styling --- */
+.input-box {
+    /* Removed position: relative and positioning logic */
+    margin-bottom: 20px;
+    width: 100%;
+    display: flex; /* Use flex for vertical stacking of label/input */
+    flex-direction: column;
+}
+
+.input-box label, .form-box label[for="role"], .form-box label[for="program"] {
+    /* Styles for all labels, moving them clearly above the input */
+    font-size: 14px;
+    color: var(--dark-gray);
+    margin-bottom: 5px;
+    font-weight: 600;
+    /* Reverted absolute positioning logic */
+    position: static; 
+    transform: none; 
+    transition: none;
+    pointer-events: auto;
+}
+
+.input-box input, .form-box select {
+    width: 100%;
+    /* Reduced padding to look cleaner */
+    padding: 10px 12px; 
+    border: 1px solid var(--gray);
+    border-radius: 5px;
+    outline: none;
+    font-size: 16px;
+    transition: border-color 0.3s;
+    background: #fafafa;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.input-box input:focus, .form-box select:focus {
+    border-color: var(--blue);
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* This is no longer needed as labels are static */
+/* .input-box input:focus + label,
+.input-box input:not(:placeholder-shown) + label {
+    transition: none;
+    top: auto; 
+    font-size: 14px;
+    color: var(--dark-gray);
+} */
+
+
+.btn {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--blue);
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px; /* Add margin above the button */
+}
+
+.btn:hover {
+    background-color: var(--light-blue);
+}
+
+.form-box p {
+    margin-top: 20px;
+    font-size: 14px;
+    color: var(--dark-gray);
+    align-self: center; /* Center the login link message */
+}
+
+.form-box p a {
+    color: var(--blue);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.form-box p a:hover {
+    text-decoration: underline;
+}
+
+.error-message {
+    margin-top: 10px;
+    color: red;
+    font-size: 14px;
+    align-self: center;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .wrapper {
+        flex-direction: column; 
+        height: auto; 
+    }
+
+    .info-text, .form-box {
+        width: 100%; 
+        padding: 20px; 
+    }
+}

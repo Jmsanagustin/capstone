@@ -1,0 +1,161 @@
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar Styling */
+.navbar {
+    background-color: #333;
+    overflow: hidden;
+    padding: 10px 0;
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.navbar a:hover {
+    background-color: #575757;
+    color: white;
+}
+
+/* Teacher Dashboard Container */
+.container {
+    width: 80%;
+    margin: 20px auto;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Headings */
+h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Table Styling */
+.students-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.students-table th, .students-table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.students-table th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.students-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.students-table tr:hover {
+    background-color: #ddd;
+}
+
+/* Form Elements */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin: 10px 0 5px;
+    font-size: 16px;
+}
+
+input[type="number"],
+select {
+    padding: 8px;
+    font-size: 16px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Error and Success Messages */
+.error-message, .success-message {
+    padding: 10px;
+    margin: 20px 0;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.error-message {
+    background-color: #f44336;
+    color: white;
+}
+
+.success-message {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* Flexbox for quiz fields container */
+#quiz_fields_container {
+    display: flex;
+    flex-direction: column;
+}
+
+#quiz_fields_container label,
+#quiz_fields_container input {
+    margin-bottom: 10px;
+}
+
+/* Dropdown and other form fields */
+select {
+    padding: 8px;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+
+    .navbar a {
+        font-size: 16px;
+    }
+
+    label, input[type="number"], select, button[type="submit"] {
+        font-size: 14px;
+    }
+
+    button[type="submit"] {
+        padding: 8px 16px;
+    }
+}

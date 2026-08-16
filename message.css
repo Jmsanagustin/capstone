@@ -1,0 +1,395 @@
+/* students.css - Finalized with fixes */
+
+/* --- 0. Global Box Model Reset (CRITICAL) --- */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* --- 1. Global Variables and Base Styles --- */
+:root {
+    --primary-color: #007bff; /* Blue for primary actions/branding */
+    --secondary-color: #dee2e6; /* LIGHT GREY - Better for borders/dividers/general secondary use */
+    --text-color-dark: #333; /* Dark text color */
+    --background-color: #f4f7f9; /* Light grey background */
+    --sidebar-bg: #ffffff; /* White sidebar */
+    --sent-msg-bg: #e1ffc7; /* Light green for sent messages (Student) */
+    --received-msg-bg: #ffffff; /* White for received messages (Instructor) */
+    --active-conv-bg: #e9ecef; /* Light grey for active conversation */
+    --alert-red: #dc3545; /* Red for unread/errors */
+    --neutral-gray: #999; /* Used for subtle text like timestamps */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color-dark);
+}
+
+.container {
+    width: 95%;
+    max-width: 1400px;
+    margin: 20px auto;
+}
+
+/* Utility for icons */
+.mr-1 {
+    margin-right: 5px;
+}
+.message.error {
+    color: var(--alert-red);
+    font-weight: bold;
+}
+
+/* --- 2. Navbar and Buttons --- */
+
+.navbar {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.nav-button {
+    background-color: white;
+    color: var(--primary-color);
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.nav-button:hover {
+    background-color: var(--primary-color); 
+    color: white;
+    border: 1px solid white; 
+}
+
+
+/* --- 3. Main Messaging Layout (Grid) --- */
+
+.messaging-layout {
+    display: grid;
+    grid-template-columns: 300px 1fr; 
+    height: 80vh; /* Fixed overall height */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.message-view {
+    display: flex;
+    flex-direction: column;
+    background-color: #fafafa;
+    height: 100%; 
+    overflow-y: hidden; 
+}
+
+#message-area {
+    /* Critical Flex properties for scrolling chat area */
+    flex-grow: 1; 
+    min-height: 0; 
+    overflow-y: auto; 
+    
+    padding: 20px; 
+    
+    display: flex;
+    flex-direction: column;
+    /* This ensures messages start at the bottom of the container */
+    justify-content: flex-end; 
+    gap: 10px;
+}
+
+/* --- 4. Conversation Sidebar --- */
+
+.conversation-sidebar {
+    background-color: var(--sidebar-bg);
+    border-right: 1px solid var(--secondary-color);
+    display: flex;
+    flex-direction: column;
+}
+
+.conversation-header {
+    padding: 15px;
+    border-bottom: 1px solid var(--secondary-color);
+    text-align: center;
+}
+
+.conversation-header h2 {
+    margin: 0 0 5px 0;
+    font-size: 1.4em;
+    color: var(--primary-color);
+}
+
+.new-conv-btn {
+    width: 100%;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.new-conv-btn:hover {
+    background-color: #0056b3;
+}
+
+.conversation-list {
+    flex-grow: 1;
+    overflow-y: auto; 
+}
+
+/* Custom Scrollbar (Basic styling) */
+.custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 10px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.conversation-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 15px;
+    text-decoration: none;
+    color: var(--text-color-dark);
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.2s;
+}
+
+.conversation-item:hover:not(.active) {
+    background-color: #f8f9fa;
+}
+
+.conversation-item.active {
+    background-color: var(--active-conv-bg);
+    border-left: 3px solid var(--primary-color);
+    font-weight: bold;
+}
+
+.conversation-item-details {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.unread-badge {
+    background-color: var(--alert-red);
+    color: white;
+    font-size: 0.75em;
+    padding: 3px 8px;
+    border-radius: 12px;
+}
+
+/* --- 5. Message View --- */
+
+.message-header {
+    padding: 15px 20px;
+    background-color: var(--sidebar-bg);
+    border-bottom: 1px solid var(--secondary-color);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.message-header h3 {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.select-conversation-prompt, .no-data {
+    text-align: center;
+    color: var(--text-color-dark); 
+    margin: auto;
+    font-style: italic;
+}
+
+/* --- 6. Message Bubbles (The Fix is Here) --- */
+
+.message-bubble-container {
+    display: flex;
+    /* FIX: Prevents container from taking up too much width and causing horizontal scroll */
+    min-width: 0; 
+}
+
+.message-bubble-container.sent {
+    justify-content: flex-end; 
+}
+
+.message-bubble-container.received {
+    justify-content: flex-start; 
+}
+
+.message-bubble {
+    max-width: 60%;
+    padding: 8px 12px;
+    border-radius: 18px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08);
+}
+
+.message-bubble p {
+    margin: 0;
+    line-height: 1.4;
+    /* FIX: Force long words/strings to break */
+    overflow-wrap: break-word; 
+    word-wrap: break-word; 
+}
+
+.message-bubble.sent {
+    background-color: var(--sent-msg-bg);
+    color: var(--text-color-dark);
+    border-bottom-right-radius: 4px;
+}
+
+.message-bubble.received {
+    background-color: var(--received-msg-bg);
+    color: var(--text-color-dark);
+    border: 1px solid #ddd;
+    border-bottom-left-radius: 4px;
+}
+
+.timestamp {
+    font-size: 0.7em;
+    color: var(--neutral-gray); 
+    text-align: right;
+    margin-top: 5px !important;
+}
+
+/* --- 7. Message Input Area --- */
+
+.message-input-area {
+    padding: 10px 20px;
+    border-top: 1px solid var(--secondary-color); 
+    background-color: var(--sidebar-bg);
+}
+
+.message-input-area form {
+    display: flex;
+    align-items: flex-end; 
+    gap: 10px;
+}
+
+.message-input-area textarea {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    resize: none; 
+    min-height: 40px;
+    max-height: 150px; 
+    font-size: 1em;
+}
+
+.message-input-area button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 50%; 
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    flex-shrink: 0; 
+}
+
+.message-input-area button:hover {
+    background-color: #0056b3;
+}
+
+/* --- 8. Modal Styles (New Conversation) --- */
+
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 100; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4); 
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    padding: 30px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 400px;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    text-align: center;
+}
+
+.modal-close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.modal-content input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0 20px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.modal-content button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    margin: 5px;
+}
+
+.modal-content button[name="start_conversation"] {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.modal-cancel-btn {
+    background-color: var(--secondary-color);
+    color: var(--text-color-dark); 
+    border: 1px solid #ccc;
+}

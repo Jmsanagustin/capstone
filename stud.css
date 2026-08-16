@@ -1,0 +1,310 @@
+/* General Body Styling */
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #00c6ff, #0072ff); /* Vibrant gradient background */
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+/* Page Title */
+h1 {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 2.5em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #ffffff;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Subtitle Styling */
+h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.8em;
+  color: #ffee58;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Table Styling */
+table {
+  width: 80%;
+  margin: 0 auto;
+  border-collapse: collapse;
+  background: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Table Header */
+thead {
+  background: #0072ff; /* Vibrant blue for header */
+  color: #fff;
+}
+
+thead th {
+  padding: 15px;
+  font-size: 1.2em;
+  text-transform: uppercase;
+}
+
+/* Table Rows */
+tbody tr {
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: rgba(0, 0, 0, 0.05); /* Light striping */
+}
+
+tbody tr:hover {
+  background-color: #00c6ff; /* Highlighted blue on hover */
+  transform: scale(1.02); /* Slight zoom effect */
+  color: #fff;
+}
+
+tbody td {
+  padding: 15px;
+  text-align: center;
+  font-size: 1.1em;
+  color: #333;
+}
+
+/* Table Cells */
+tbody td:hover {
+  background: rgba(255, 255, 255, 0.7); /* Highlight individual cells */
+  color: #0072ff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  table {
+      width: 95%;
+  }
+
+  h1 {
+      font-size: 2em;
+  }
+
+  h3 {
+      font-size: 1.5em;
+  }
+}
+
+.navbar {
+  position: fixed; /* Keeps the navbar at the upper-right even when scrolling */
+  top: 10px; /* Adjusts distance from the top of the viewport */
+  right: 10px; /* Adjusts distance from the right of the viewport */
+  display: flex; /* Display items in a row (horizontal) */
+  justify-content: flex-end; /* Align items to the right */
+  background: linear-gradient(135deg, #00c6ff, #0072ff); /* Gradient background */
+  padding: 10px 20px; /* Add space inside the navbar */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+  z-index: 1000; /* Ensure navbar stays on top */
+}
+
+.navbar a {
+  text-decoration: none; /* Remove underline from links */
+  color: #fff; /* White color for links */
+  padding: 10px 15px; /* Spacing inside the links */
+  margin: 0 10px; /* Horizontal space between links */
+  text-align: center; /* Center-align text */
+  display: inline-block; /* Keep links in one row */
+  border-radius: 5px; /* Slight rounding for links */
+  font-size: 1.1em; /* Slightly larger text */
+  transition: all 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.navbar a:hover {
+  background-color: #fff; /* White background on hover */
+  color: #0072ff; /* Change text color to blue */
+  transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+/* General Body Styling */
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #00c6ff, #0072ff); /* Vibrant gradient background */
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navbar - Horizontal Layout */
+.navbar {
+  position: fixed; /* Keeps the navbar at the top-right even when scrolling */
+  top: 10px; /* Adjusts distance from the top of the viewport */
+  right: 10px; /* Adjusts distance from the right of the viewport */
+  display: flex; /* Display items in a row (horizontal) */
+  justify-content: flex-end; /* Align items to the right */
+  background: linear-gradient(135deg, #00c6ff, #0072ff); /* Gradient background */
+  padding: 10px 20px; /* Add space inside the navbar */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+  z-index: 1000; /* Ensure navbar stays on top */
+}
+
+.navbar a {
+  text-decoration: none; /* Remove underline from links */
+  color: #fff; /* White color for links */
+  padding: 10px 15px; /* Spacing inside the links */
+  margin: 0 10px; /* Horizontal space between links */
+  text-align: center; /* Center-align text */
+  display: inline-block; /* Keep links in one row */
+  border-radius: 5px; /* Slight rounding for links */
+  font-size: 1.1em; /* Slightly larger text */
+  transition: all 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.navbar a:hover {
+  background-color: #fff; /* White background on hover */
+  color: #0072ff; /* Change text color to blue */
+  transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+/* Chatbox Styling */
+#chatbox {
+  position: fixed; /* Keep chatbox fixed on the screen */
+  bottom: 10px;
+  left: 10px;
+  width: 300px;
+  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+  padding: 15px;
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  height: auto; /* Default height (not minimized) */
+  transition: height 0.3s ease; /* Smooth transition when minimized */
+}
+
+#chatbox h3 {
+  font-size: 1.4em;
+  color: #0072ff;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#minimizeBtn {
+  font-size: 1.2em;
+  background: none;
+  border: none;
+  color: #0072ff;
+  cursor: pointer;
+}
+
+#messages {
+  background-color: #f1f1f1;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  height: 200px;
+  overflow-y: auto;
+}
+
+#messageInput {
+  width: 80%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+#sendMessage {
+  width: 15%;
+  padding: 10px;
+  background-color: #00c6ff;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+#sendMessage:hover {
+  background-color: #0072ff; /* Change button color on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  #chatbox {
+      width: 90%;
+  }
+}
+
+/* === GLOBAL RESETS === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+  display: flex;
+  background: #f4f6fb;
+  color: #333;
+}
+
+/* === MAIN === */
+main {
+  margin-left: 280px;
+  margin-top: 85px;
+  padding: 20px 40px;
+  width: calc(100% - 280px);
+}
+
+main h1 {
+  font-size: 26px;
+  color: #0c2340;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 20px;
+  color: #1b3764;
+  margin-bottom: 10px;
+}
+
+/* === TABLE === */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 10px 15px;
+  text-align: left;
+}
+
+th {
+  background: #f0f0f0;
+  color: #333;
+  font-weight: 600;
+}
+
+/* === FINAL GRADE BOX === */
+.final-grade {
+  margin-top: 20px;
+  background: #fff;
+  border-left: 5px solid #00aaff;
+  padding: 15px 20px;
+  border-radius: 6px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #0c2340;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
